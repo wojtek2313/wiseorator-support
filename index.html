@@ -23,7 +23,7 @@
   .wrap {
     max-width: 680px;
     margin: 0 auto;
-    padding: 96px 24px 120px;
+    padding: 64px 24px 120px;
   }
   .eyebrow {
     font-size: 14px;
@@ -89,9 +89,27 @@
     font-size: 13px;
     color: #86868b;
   }
+  nav.topnav {
+    display: flex;
+    gap: 24px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #d2d2d7;
+  }
+  nav.topnav a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6e6e73;
+  }
+  nav.topnav a.active {
+    color: #1d1d1f;
+  }
 </style>
 </head>
 <body>
+  <nav class="topnav">
+    <a class="active" href="index.html">Support</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </nav>
   <div class="wrap">
     <p class="eyebrow">Support</p>
     <h1>WiseOrator</h1>
