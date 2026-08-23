@@ -49,6 +49,11 @@
     letter-spacing: -0.01em;
     margin: 48px 0 12px;
   }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 24px 0 8px;
+  }
   p {
     font-size: 17px;
     margin: 0 0 16px;
@@ -75,6 +80,16 @@
     margin-top: 40px;
   }
   .card h2 {
+    margin-top: 0;
+  }
+  .highlight {
+    border: 1px solid #d2d2d7;
+    border-radius: 18px;
+    padding: 28px;
+    margin: 24px 0;
+    background: #fbfbfd;
+  }
+  .highlight h3:first-child {
     margin-top: 0;
   }
   .email {
@@ -109,26 +124,100 @@
   <nav class="topnav">
     <a href="index.html">Support</a>
     <a class="active" href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
   </nav>
   <div class="wrap">
     <p class="eyebrow">Privacy</p>
     <h1>Privacy Policy</h1>
-    <p class="subtitle">Last updated: August 9, 2026</p>
+    <p class="subtitle">Last updated: August 23, 2026</p>
 
     <h2>Overview</h2>
-    <p>WiseOrator is designed to process everything on your device. We do not operate a backend server, and we do not collect, transmit, or sell your personal data to anyone.</p>
+    <p>WiseOrator is developed and operated by Wojciech Kulas, trading as Usługi Informatyczne Wojciech Kulas, based in Opole, Poland ("we", "us"). WiseOrator is designed to process everything on your device. We do not operate a backend server ourselves, and we do not collect, transmit, or sell your personal data to anyone. The one narrow exception — where iOS itself, not us, may involve Apple's servers to transcribe speech on certain devices — is explained under "Voice &amp; transcript data" below.</p>
 
     <h2>Information we use</h2>
     <p>To provide live coaching feedback, WiseOrator accesses:</p>
     <ul>
       <li><strong>Camera</strong> — to analyze your posture and facial expressions during a session.</li>
-      <li><strong>Microphone</strong> — to analyze your speaking pace and detect filler words.</li>
-      <li><strong>Speech recognition</strong> — to transcribe your speech for analysis.</li>
+      <li><strong>Microphone</strong> — to analyze your speaking pace, detect filler words, and transcribe your speech for analysis.</li>
     </ul>
-    <p>All analysis happens locally, on your device. Session recordings and results are stored locally in the app's storage and are never uploaded to us or any third party.</p>
+    <p>Session recordings, transcripts, and results are stored locally in the app's storage and are never uploaded by us to any server or third party.</p>
+
+    <h2>Face data</h2>
+    <p>Because WiseOrator coaches posture and facial expression, the camera feed necessarily includes your face. This section explains exactly what we do with it.</p>
+
+    <div class="highlight">
+      <h3>What we collect</h3>
+      <p>During a live session, WiseOrator uses Apple's on-device Vision framework to analyze the front-camera feed in real time. This includes detecting facial landmarks (such as the position of your eyes and mouth) to determine two things: whether you appear to be smiling, and whether you are maintaining eye contact with the camera. We also record video of the session — which includes your face and voice — so you can review your own performance afterward. WiseOrator does not perform face identification or recognition, does not create face embeddings or a face template, and never compares your face against any other face or database.</p>
+
+      <h3>How we use it</h3>
+      <p>Face data is used solely to generate the coaching feedback shown to you within the app — eye contact, smile, and posture scores for your own session. It is not used for any other purpose, and it is not used to identify or profile you.</p>
+
+      <h3>Sharing with third parties</h3>
+      <p>We do not share face data, session recordings, or any analysis derived from them with any third party — no advertiser, no analytics provider, no data broker, and not Apple. WiseOrator has no backend server and makes no network requests of any kind; the entire camera and analysis pipeline runs on your device.</p>
+
+      <h3>Where it is stored</h3>
+      <p>Session recordings are saved only in WiseOrator's private storage area on your device. The video file is protected with complete file-level encryption, meaning it can only be read while your device is unlocked, and it is excluded from iCloud and other device backups, so it is never copied off your device even by the system backup process. The real-time facial landmark analysis itself is never saved — only the resulting session outcome (for example, "eye contact maintained: yes/no") is stored alongside the recording, in a local, on-device database.</p>
+
+      <h3>Retention and deletion</h3>
+      <p>Recordings and session data are kept on your device for as long as you choose to keep that session — there is no server-side copy to separately delete. You can permanently delete any session, including its video recording, at any time from your session history; this removes both the recording and its associated data from your device immediately. Uninstalling the app permanently deletes all remaining session data and recordings, since everything lives solely in the app's private storage.</p>
+    </div>
+
+    <h2>Voice &amp; transcript data</h2>
+    <p>WiseOrator's microphone access is also used to measure your speaking pace and detect filler words, and to transcribe what you say into a text transcript.</p>
+
+    <div class="highlight">
+      <h3>What we collect</h3>
+      <p>While you record a session, WiseOrator uses Apple's Speech framework to transcribe your voice into text, and analyzes that transcript to measure words per minute and detect overused filler words. The resulting transcript is saved alongside your session, together with your video recording.</p>
+
+      <h3>How we use it</h3>
+      <p>Your transcript is used to compute your pace and filler-word feedback, and — only if you have Apple Intelligence enabled — is provided, together with your session metrics and chosen topic, as input to Apple's on-device AI system model to generate written coaching feedback on your tone, vocabulary, and content. See "Apple Intelligence" below for how that model handles this input.</p>
+
+      <h3>Where transcription happens</h3>
+      <p>On devices that support it, transcription runs entirely on-device using Apple's on-device Speech Analyzer. On older or unsupported devices, or for languages where on-device transcription isn't available, iOS's Speech framework may instead use Apple's server-based speech recognition service to produce your transcript — in that case, the audio needed to generate the transcript is sent to Apple's servers to be processed, under Apple's own privacy practices, not ours. This fallback is determined automatically by iOS based on your device and language, not by us, and we do not have visibility into when it occurs on a given device.</p>
+
+      <h3>Sharing and retention</h3>
+      <p>We do not share your transcript with any third party ourselves. It is stored only in WiseOrator's local, on-device database, and is deleted immediately and permanently when you delete that session or uninstall the app.</p>
+    </div>
+
+    <h2>Illinois Biometric Information Privacy Notice (BIPA)</h2>
+    <p>If you are an Illinois resident, this section is provided to comply with the Illinois Biometric Information Privacy Act (BIPA).</p>
+
+    <div class="highlight">
+      <h3>What may qualify</h3>
+      <p>WiseOrator's on-device analysis of your facial geometry (used to determine eye contact and smile) may qualify as a "biometric identifier" under BIPA, regardless of whether it is used to identify you — WiseOrator does not identify or recognize who you are.</p>
+
+      <h3>No sale, lease, or trade</h3>
+      <p>We do not sell, lease, trade, or otherwise profit from your biometric identifiers or biometric information, under any circumstances, and never will.</p>
+
+      <h3>Retention and destruction</h3>
+      <p>We do not receive, store, or retain any copy of your biometric identifiers ourselves — all facial and voice analysis happens exclusively on your own device, inside the app's private storage, which we cannot access or see. You control retention and destruction directly: deleting a session immediately and permanently destroys the associated recording and analysis on your device, and uninstalling WiseOrator destroys everything that remains. Because we never hold a copy, there is no separate entity-level retention schedule to apply — destruction is entirely in your hands, immediately available at any time.</p>
+
+      <h3>Security</h3>
+      <p>Consistent with BIPA's reasonable-care standard, biometric data at rest on your device is protected with complete file-level encryption and is excluded from iCloud and other device backups — see "Face data" above.</p>
+
+      <h3>Consent</h3>
+      <p>Before WiseOrator analyzes your face, body language, or voice for the first time, the app requires you to affirmatively agree via a dedicated in-app consent screen describing this analysis in plain language — separate from, and in addition to, your acceptance of this Policy and the <a href="terms.html">Terms of Use</a> as a whole.</p>
+    </div>
+
+    <h2>Your rights (GDPR / UK GDPR)</h2>
+    <p>If you are located in the European Economic Area, the United Kingdom, or another jurisdiction with similar data protection law, this section applies to you.</p>
+
+    <div class="highlight">
+      <h3>Data controller</h3>
+      <p>WiseOrator is developed and operated by Wojciech Kulas, trading as Usługi Informatyczne Wojciech Kulas, based in Opole, Poland. This is the data controller for WiseOrator, reachable at <a href="mailto:wojtek.kulas2313@gmail.com">wojtek.kulas2313@gmail.com</a>.</p>
+
+      <h3>Legal basis</h3>
+      <p>We process your camera, microphone, and derived session data on the basis of your consent (Article 6(1)(a) GDPR), given through the in-app permission prompts and the dedicated biometric-analysis consent screen, which you may withdraw at any time by deleting your session data or uninstalling the app. We do not believe this processing constitutes "special category" data under Article 9 GDPR, because it is not used to uniquely identify you. If you have concerns about this interpretation, please contact us.</p>
+
+      <h3>Your rights</h3>
+      <p>Because all data lives only on your own device, you can exercise your rights of access, rectification, and erasure at any time, directly in the app, without contacting us — deleting a session, or the app itself, achieves this immediately. For any other question about how we handle your data, contact us at <a href="mailto:wojtek.kulas2313@gmail.com">wojtek.kulas2313@gmail.com</a>. You also have the right to lodge a complaint with your local data protection supervisory authority — for example, in Poland, the Prezes Urzędu Ochrony Danych Osobowych (UODO).</p>
+
+      <h3>International transfers</h3>
+      <p>Because processing happens exclusively on your own device, WiseOrator itself does not transfer your data internationally. The one exception is the speech-recognition server fallback described under "Voice &amp; transcript data" above, which is handled directly by Apple under Apple's own privacy practices, not ours.</p>
+    </div>
 
     <h2>Apple Intelligence</h2>
-    <p>WiseOrator uses Apple Intelligence, on supported devices with Apple Intelligence enabled, to generate personalized session feedback on-device. This feature is currently available in the U.S. region. Processing is handled by Apple's on-device system model, governed by Apple's own privacy practices.</p>
+    <p>WiseOrator uses Apple Intelligence, on supported devices with Apple Intelligence enabled, to generate personalized session feedback on-device. The feedback feature sends your session metrics, transcript, and chosen topic as input to Apple's on-device system language model — provided through Apple's <code>FoundationModels</code> framework, which only exposes the on-device model to apps like ours and has no mechanism for us to route this data to Apple's servers or anyone else's. This feature is currently available only in regions where Apple has enabled Apple Intelligence's on-device language model for third-party apps (at present, the United States); availability may expand as Apple's rollout continues. Processing is handled by Apple's on-device system model, governed by Apple's own privacy practices.</p>
 
     <h2>Data storage and deletion</h2>
     <p>Session data (metrics, recordings, and feedback) is stored only on your device. You can delete any session, including its recording, at any time from your session history. Deleting a session removes it permanently from your device.</p>
@@ -137,14 +226,17 @@
     <p>WiseOrator does not integrate any third-party analytics, advertising, or tracking SDKs. We do not share your data with anyone, because we never collect it in the first place.</p>
 
     <h2>Children's privacy</h2>
-    <p>WiseOrator is not directed at children under 13, and we do not knowingly collect personal data from children.</p>
+    <p>WiseOrator is not directed at children under 16, and we do not knowingly collect personal data from children under that age.</p>
+
+    <h2>California residents (CCPA/CPRA)</h2>
+    <p>California residents: we do not sell or share your personal information, and given the nature of our processing (fully on-device, no accounts, no data collection by us), most CCPA/CPRA obligations do not apply to WiseOrator.</p>
 
     <h2>Changes to this policy</h2>
     <p>If this policy changes, we will update the "Last updated" date above and, where appropriate, the app's release notes.</p>
 
     <div class="card">
       <h2>Contact</h2>
-      <p>Questions about this policy or your data:</p>
+      <p>Questions about this policy or your data — Wojciech Kulas, independent developer:</p>
       <a class="email" href="mailto:wojtek.kulas2313@gmail.com">wojtek.kulas2313@gmail.com</a>
     </div>
 
