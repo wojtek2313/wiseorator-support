@@ -82,6 +82,26 @@
     font-size: 17px;
     font-weight: 600;
   }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #6e6e73;
+    background: #f5f5f7;
+    border-radius: 980px;
+    padding: 10px 20px;
+    margin-top: -32px;
+    margin-bottom: 56px;
+  }
+  .badge::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff9f0a;
+  }
   footer {
     margin-top: 80px;
     padding-top: 24px;
@@ -109,17 +129,23 @@
   <nav class="topnav">
     <a class="active" href="index.html">Support</a>
     <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
   </nav>
   <div class="wrap">
     <p class="eyebrow">Support</p>
     <h1>WiseOrator</h1>
     <p class="subtitle">Real-time coaching for posture, expression, and speech.</p>
 
+    <!-- TODO: once WiseOrator is approved, replace this badge with:
+    <a class="badge" href="https://apps.apple.com/app/id<APP_ID>">Download on the App Store →</a>
+    -->
+    <p class="badge">Coming soon to the App Store</p>
+
     <h2>Getting started</h2>
     <p>WiseOrator uses your device's camera and microphone to give you live feedback during practice sessions — on your posture, facial expressions, and how you speak. Grant camera, microphone, and speech recognition access when prompted so the app can analyze your session.</p>
 
     <h2>Apple Intelligence</h2>
-    <p>WiseOrator uses Apple Intelligence to generate personalized session feedback on-device. This feature is currently available in the U.S. region, on supported devices with Apple Intelligence enabled.</p>
+    <p>WiseOrator uses Apple Intelligence to generate personalized session feedback on-device, on supported devices with Apple Intelligence enabled. This feature is currently available only in regions where Apple has enabled Apple Intelligence's on-device language model for third-party apps (at present, the United States); availability may expand as Apple's rollout continues.</p>
 
     <h2>Resizable window</h2>
     <p>WiseOrator's interface is fully resizable, adapting to any window size on iPad, including Split View and Stage Manager.</p>
@@ -132,10 +158,13 @@
     Make sure Speech Recognition access is enabled in Settings → Privacy & Security → Speech Recognition, and that you're speaking in a supported language.</p>
 
     <p><strong>Why don't I see AI-generated feedback?</strong><br>
-    AI-generated session feedback requires Apple Intelligence, which is currently available in the U.S. region on supported devices. Make sure Apple Intelligence is enabled in Settings → Apple Intelligence & Siri.</p>
+    AI-generated session feedback requires Apple Intelligence, which is currently available only in regions where Apple has enabled it for third-party apps (at present, the United States). Make sure Apple Intelligence is enabled in Settings → Apple Intelligence & Siri.</p>
 
     <p><strong>How do I delete a session?</strong><br>
     Open the session from your session history and use the delete option to remove it, including its recording, from your device.</p>
+
+    <p><strong>How do I delete all my data?</strong><br>
+    Uninstalling WiseOrator permanently deletes all session data and recordings from your device.</p>
 
     <h2>Still need help?</h2>
     <p>Reach out and we'll get back to you as soon as we can.</p>
